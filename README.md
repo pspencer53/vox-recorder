@@ -1,6 +1,6 @@
 # vox-recorder
 
-Voice activated audio recorder intended for scanner radio use. Record starts when audio level is higher than threshold and records end after 5 seconds of silence.
+Voice activated audio recorder intended for scanner radio or any audio input that has long periods of silence. Recording starts when the audio level is higher than a defined threshold and recording ends after 5 seconds of silence.
 
 ## Depencies
 python3
@@ -10,11 +10,11 @@ python3-pyaudio
 
 ./vox-recorder.py
 
-Audio recordings will be saved to ~/vox-records. Save file type is wav. Audio file names are timestamped eg,
+Audio recordings will be saved to a defined directory. The file type is wav. Audio file names are timestamped eg,
 
     voxrecord-20180705222631-20180705222639.wav
     
-Use another application to select recording soundcard you like to use, like pavucontrol.
+Uses pulseaudio so that the Python program can multitask both recieving audio and creating output files concurrently.
 
 ## Licence
 
