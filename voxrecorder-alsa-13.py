@@ -11,14 +11,14 @@
     To address these deficientcies, the design has been modified with the following changes:
         1 - Implement multi-threading to handle the recording.  The recordings can be processed in parallel with a new voice is being buffered.
         2 - A long recording will be broken into segments to protect running out of system resources.  The default is to limit each recording to about 3.5 minutes.
-        3 - the PyAudio stream is not closed, thus eliminating any data loss of voice beign recieved.
+        3 - the PyAudio stream is not closed, thus eliminating any data loss of voice being recieved.
     V11.0 - Optimuized to record stream with no trimming.  Timeout after X seconds and breaks audio into chunks.
     v11.1 - Added Trim, and Add_Silence back in.
     v12.0 - switch from PyAudio to alsaaudio
     v12.1 - Added launching Pulseaudio as a deamon prior to running script. 
           - Tested running as a Supervisor service under user login of "pi".  See file /etc/supervisor/conf.d/vox.conf
                 [program:vox]
-                directory=/home/pi/tanner
+                directory=/home/pi/alsa
                 command=/home/pi/alsa/voxrecorder-alsa-12.py
                 stopsignal=INT
                 stopasgroup=true
@@ -60,11 +60,11 @@ os.system("/usr/bin/pulseaudio -D");
 
 DEBUGON = False
 DEBUGMEM = False
-VOXVERSION = 'v12.3'
+VOXVERSION = 'v13.0'
 #SILENCE_THRESHOLD = 4000
 SILENCE_THRESHOLD = 2000
 RECORD_AFTER_SILENCE_SECS = 5
-MAX_CLIP_SIZE = 10000000 # 3Meg = aprox 1 minute
+MAX_CLIP_SIZE = 30000000 # 3Meg = aprox 1 minute
 WAVEFILES_STORAGEPATH = os.path.expanduser("/mnt/ramdisk")
 
 # PyAudio
