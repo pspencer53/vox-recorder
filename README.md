@@ -2,7 +2,7 @@
 
 Voice activated audio recorder intended for scanner radio or any audio input that has long periods of silence. Recording starts when the audio level is higher than a defined threshold and recording ends after 5 seconds of silence.
 
-## Depenancies
+## Dependancies
 python3
 python3-pulseaudio
 psutils
