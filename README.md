@@ -17,7 +17,7 @@ Audio recordings will be saved to a defined directory. The file type is wav. Aud
 
     voxrecord-20180705222631-20180705222639.wav
     
-Uses pulseaudio so that the Python program can multitask both recieving audio and creating output files concurrently.
+Uses pulseaudio so that the Python program can multitask both receiving audio and creating output files concurrently.
 
 ## High level program logic
 The program does the following: 
